@@ -18,7 +18,7 @@ jobs:
           print 
           (platform.processor())
   build test on winodws:
-    runs-on: windows-latest:
+    runs-on: windows-latest
     steps:
       - name: powershell pwd chudham
         run: get-location
