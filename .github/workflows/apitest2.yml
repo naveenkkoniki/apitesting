@@ -3,7 +3,7 @@ name: apitesting-workflow
 on: [push]
 
 jobs:
-  build test on linux shells:
+  build-test-linux-shells:
     runs-on: ubuntu-latest
     steps:
       - name: string ni echo chesi chudham
@@ -17,7 +17,7 @@ jobs:
           import platform 
           print 
           (platform.processor())
-  build test on winodws:
+  build-test-winodws:
     runs-on: windows-latest
     steps:
       - name: powershell pwd chudham
