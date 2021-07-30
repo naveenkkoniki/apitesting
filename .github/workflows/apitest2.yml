@@ -3,17 +3,25 @@ name: apitesting-workflow
 on: [push]
 
 jobs:
-  build:
+  build test on linux shells:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
+      - name: string ni echo chesi chudham
         run: echo "hello world"
       - run: |
           node -v 
           npm -v
-      - name: python commands 
+      - name: python shell use chesi commands run chedham
         shell: python
         run: |
           import platform 
           print 
           (platform.processor())
+  build test on winodws:
+    runs-on: windows-latest:
+    steps:
+      - name: powershell pwd chudham
+        run: get-location
+      - name: bash pwd chdham 
+        shell: bash 
+        run: pwd
