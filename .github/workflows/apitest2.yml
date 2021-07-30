@@ -19,6 +19,7 @@ jobs:
           (platform.processor())
   build-test-winodws:
     runs-on: windows-latest
+    needs: [build-test-linux-shells]
     steps:
       - name: powershell pwd chudham
         run: get-location
