@@ -1,38 +1,44 @@
-name: mypractice-checkout-workflow 
+name: mypractice-envvariables-workflow 
 
 on: [push]
 
+env: 
+  wf_env: commonvar for all  jobs in a wf    ## this is availble for all jobs. 
+  
 jobs: 
-  action-chuse-job:
-     runs-on: [ubuntu-latest]
-     steps: 
-       - name: checkout branch
-         uses: actions/checkout@v1
-         
-       - name: list files 
-         run: |
-          pwd
-          ls -la
-          echo "########github reference branch is########"
-          echo $GITHUB_REF
+  log-env-varibales-job:
+    runs-on: ubuntu-latest
+    env: 
+      job_env: available for all steps in a job
+    steps: 
+      - name: log env variables
+        env: 
+          step_env: availabe to only this step
+        run: |
+          echo "job_env: ${ job_env }"
+          echo "WF_ENV: ${ wf_env }"
+          echo "step_env: ${ step_env }"
+      - name: log env2 variables     
+        run: |
+          echo "job_env: ${ job_env }"
+          echo "WF_ENV: ${ wf_env }"
+          echo "step_env: ${ step_env }"  
           
-          echo "########github reference branch with output variable########"
-          echo "${{ github.ref }}"
-          
-          echo "########github repository is########"
-          echo $GITHUB_REPOSITORY
-          
-          echo "########github workspace is########"
-          echo $GITHUB_WORKSPACE
-          
-          echo "########github sha is########"
-          echo $GITHUB_SHA
-           
-       - name: actions ela vadalo chudham
-         id: naIDnaistam
-         uses: actions/hello-world-javascript-action@v1
-         with: 
-           who-to-greet: "naku nene greetings....entira makidhi"
-           
-       - name: pina output chudalante pina step lo ID petti kinda dhanni json lo call cheyyi
-         run: echo "${{ steps.naIDnaistam.outputs.time }}"
+  log-default-env-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: default env variables
+        run: |
+          echo "HOME : ${ HOME }"
+          echo "GITHUB_WORKFLOW : ${ GITHUB_WORKFLOW }"
+          echo "GITHUB_ACTION : ${ GITHUB_ACTION }"
+          echo "GITHUB_ACTIONS : ${ GITHUB_ACTIONS }"
+          echo "GITHUB_ACTOR : ${ GITHUB_ACTOR }"
+          echo "GITHUB_REPOSITORY : ${ GITHUB_REPOSITORY }"
+          echo "GITHUB_EVENT_NAME : ${ GITHUB_EVENT_NAME }"
+          echo "GITHUB_WORKSPACE : ${ GITHUB_WORKSPACE }"
+          echo "GITHUB_SHA : ${ GITHUB_SHA }"
+          echo "GITHUB_REF : ${ GITHUB_REF }"
+          echo "job_env: ${ job_env }"
+          echo "WF_ENV: ${ wf_env }"
+          echo "step_env: ${ step_env }" 
