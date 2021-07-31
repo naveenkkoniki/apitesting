@@ -8,7 +8,7 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node-version: [6,7,8,9]     ## to choose diff versions
       max-parallel: 2               ## limiting no:of jobs run in parallel
-    failfast: true               ## this will allow to run all even of them fails.
+      fail-fast: true               ## this will allow to run all even of them fails.
     runs-on: "{{ matrix.os }}"
     steps:
       - name: check default node version
