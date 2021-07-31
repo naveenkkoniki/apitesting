@@ -16,6 +16,9 @@ jobs:
           echo "########github reference branch is########"
           echo $GITHUB_REF
           
+          echo "########github reference branch with output variable########"
+          echo "${{ github.ref }}"
+          
           echo "########github repository is########"
           echo $GITHUB_REPOSITORY
           
