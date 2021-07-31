@@ -1,28 +1,15 @@
-name: apitesting-workflow
+name: mypractice-workflow 
 
 on: [push]
 
-jobs:
-  build-test-linux-shells:
-    runs-on: ubuntu-latest
-    steps:
-      - name: string ni echo chesi chudham
-        run: echo "hello world"
-      - run: |
-          node -v 
-          npm -v
-      - name: python shell use chesi commands run chedham
-        shell: python
-        run: |
-          import platform 
-          print 
-          (platform.processor())
-  build-test-winodws:
-    runs-on: windows-latest
-    needs: [build-test-linux-shells]
-    steps:
-      - name: powershell pwd chudham
-        run: get-location
-      - name: bash pwd chdham 
-        shell: bash 
-        run: pwd
+jobs: 
+  action-chuse-job:
+     runs-on: [ubuntu-latest]
+     steps: 
+       - name: actions ela vadalo chudu
+         id: naIDnaistam
+         uses: actions/hello-world-javascript-action@v1
+         with: 
+           who-to-greet: "naku nene greetings....entira makidhi"
+       - name: pina output chudalante pina step lo ID petti kinda dhanni json lo call cheyyi
+         run: echo "{{ steps.id.outputs.time }}"
