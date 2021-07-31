@@ -3,13 +3,20 @@ on: push
 
 jobs: 
   node-version-job:
-    runs-on: ubuntu-latest
+    strategy: 
+      matrix: 
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node-version: [6,7,8,9]     ## to choose diff versions
+      max-parallel: 2               ## limiting no:of jobs run in parallel
+    ##fail-fast: true               ## this will allow to run all even of them fails.
+    runs-on: "{{ matrix.os }}"
     steps:
       - name: check default node version
         run: node -v 
       - name: run step on specific npm versions
         uses: actions/setup-node@v1
         with: 
-            node-version: 6
+            node-version: "{{ matrix.node-version }}"
       - name: check node version now
         run: node -v 
+####### 4 versions 3 os so total job will run 12 times############
