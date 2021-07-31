@@ -12,4 +12,4 @@ jobs:
          with: 
            who-to-greet: "naku nene greetings....entira makidhi"
        - name: pina output chudalante pina step lo ID petti kinda dhanni json lo call cheyyi
-         run: echo $"${{ steps.naIDnaistam.outputs.time }}"
+         run: echo "${{ steps.naIDnaistam.outputs.time }}"
