@@ -13,7 +13,7 @@ jobs:
           pwd
           ls -la
           echo "github reference branch"
-          echo $GITHUB.REF
+          echo $GITHUB_REF
        - name: actions ela vadalo chudham
          id: naIDnaistam
          uses: actions/hello-world-javascript-action@v1
