@@ -2,7 +2,7 @@ name: matrix
 on: push
 
 jobs: 
-  node-version-job 
+  node-version-job:
     runs-on: ubuntu-latest
     steps:
       - name: check default node version
