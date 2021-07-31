@@ -15,30 +15,30 @@ jobs:
         env: 
           step_env: availabe to only this step
         run: |
-          echo "job_env: ${ job_env }"
-          echo "WF_ENV: ${ wf_env }"
-          echo "step_env: ${ step_env }"
+          echo "job_env: ${job_env}"
+          echo "WF_ENV: ${wf_env}"
+          echo "step_env: ${step_env}"
       - name: log env2 variables     
         run: |
-          echo "job_env: ${ job_env }"
-          echo "WF_ENV: ${ wf_env }"
-          echo "step_env: ${ step_env }"  
+          echo "job_env: ${job_env}"
+          echo "WF_ENV: ${wf_env}"
+          echo "step_env: ${step_env}"  
           
   log-default-env-job:
     runs-on: ubuntu-latest
     steps: 
       - name: default env variables
         run: |
-          echo "HOME : ${ HOME }"
-          echo "GITHUB_WORKFLOW : ${ GITHUB_WORKFLOW }"
-          echo "GITHUB_ACTION : ${ GITHUB_ACTION }"
-          echo "GITHUB_ACTIONS : ${ GITHUB_ACTIONS }"
-          echo "GITHUB_ACTOR : ${ GITHUB_ACTOR }"
-          echo "GITHUB_REPOSITORY : ${ GITHUB_REPOSITORY }"
-          echo "GITHUB_EVENT_NAME : ${ GITHUB_EVENT_NAME }"
-          echo "GITHUB_WORKSPACE : ${ GITHUB_WORKSPACE }"
-          echo "GITHUB_SHA : ${ GITHUB_SHA }"
-          echo "GITHUB_REF : ${ GITHUB_REF }"
-          echo "job_env: ${ job_env }"
-          echo "WF_ENV: ${ wf_env }"
-          echo "step_env: ${ step_env }" 
+          echo "HOME : ${HOME}"
+          echo "GITHUB_WORKFLOW : ${GITHUB_WORKFLOW}"
+          echo "GITHUB_ACTION : ${GITHUB_ACTION}"
+          echo "GITHUB_ACTIONS : ${GITHUB_ACTIONS}"
+          echo "GITHUB_ACTOR : ${GITHUB_ACTOR}"
+          echo "GITHUB_REPOSITORY : ${GITHUB_REPOSITORY}"
+          echo "GITHUB_EVENT_NAME : ${GITHUB_EVENT_NAME}"
+          echo "GITHUB_WORKSPACE : ${GITHUB_WORKSPACE}"
+          echo "GITHUB_SHA : ${GITHUB_SHA}"
+          echo "GITHUB_REF : ${GITHUB_REF}"
+          echo "job_env: ${job_env}"
+          echo "WF_ENV: ${wf_env}"
+          echo "step_env: ${step_env}" 
