@@ -12,8 +12,15 @@ jobs:
          run: |
           pwd
           ls -la
-          echo "github reference branch"
+          echo "github reference branch.........."
           echo $GITHUB_REF
+          echo "github repository is............."
+          echo $GITHUB_REPOSITORY
+          echo "github workspace is.............."
+          echo $GITHUB_WORKSPACE
+          echo "github sha is...................."
+          echo "gitub sha "
+          echo 
        - name: actions ela vadalo chudham
          id: naIDnaistam
          uses: actions/hello-world-javascript-action@v1
