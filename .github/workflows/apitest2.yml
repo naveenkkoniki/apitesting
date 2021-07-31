@@ -13,16 +13,16 @@ jobs:
          run: |
           pwd
           ls -la
-          echo "github reference branch is.........."
+          echo "########github reference branch is########"
           echo $GITHUB_REF
           
-          echo "github repository is................"
+          echo "########github repository is########"
           echo $GITHUB_REPOSITORY
           
-          echo "github workspace is................"
+          echo "########github workspace is########"
           echo $GITHUB_WORKSPACE
           
-          echo "github sha is......................"
+          echo "########github sha is########"
           echo $GITHUB_SHA
            
        - name: actions ela vadalo chudham
